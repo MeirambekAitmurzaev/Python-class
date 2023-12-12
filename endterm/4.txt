@@ -1,0 +1,38 @@
+1. What is API?
+API stands for Application Programming Interface. It is a set of protocols, routines, and tools for building software applications. 
+
+2. Use Cases of API:
+
+Integration: APIs allow different software systems to communicate and share data with each other, enabling seamless integration.
+Data Retrieval: APIs are commonly used to retrieve data from external sources, like databases or web services.
+Automation: APIs enable automation by allowing different software systems to interact programmatically.
+3. Example of Using API with Python:
+
+Let's use the OpenWeatherMap API to get the current weather for a specific city.
+python
+Copy code
+import requests
+
+api_key = "API_KEY"
+city = "London"
+
+
+response = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}")
+
+
+if response.status_code == 200:
+    data = response.json()
+    temperature = data['main']['temp']
+    print(f"The current temperature in {city} is {temperature}°C")
+else:
+    print(f"Failed to retrieve weather data. Status code: {response.status_code}")
+4. Limitations of API:
+
+Rate Limits: Many APIs have rate limits, restricting the number of requests a user can make within a certain timeframe.
+Security: Improperly secured APIs may expose sensitive data or lead to unauthorized access.
+Limited Functionality: Some APIs may not provide all the functionalities needed for a specific use case.
+
+
+
+
+
